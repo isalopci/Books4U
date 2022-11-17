@@ -23,7 +23,6 @@ class requestApi:
     def fetchBooks(self):
         url = self.buildUrl()
         response = requests.get(url)
-        print(response.text)
-
-if __name__ == '__main__':
-    requestApi().fetchBooks()
+        return response.text
+#if __name__ == '__main__':
+#    requestApi().fetchBooks()
