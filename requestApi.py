@@ -19,10 +19,16 @@ class requestApi:
             query = f'?title={self.title}'
         
         return base_url + query
+    
+    @staticmethod
+    def fetchCoverImage(id:str, size:str = 'M') -> str:
+        if size not in ['S','M','L']:
+            raise Exception('An image size must be entered (S, M or L)')
+        return f'https://covers.openlibrary.org/b/id/{id}-{size}.jpg'
+
 
     def fetchBooks(self):
         url = self.buildUrl()
         response = requests.get(url)
         return response.text
-#if __name__ == '__main__':
-#    requestApi().fetchBooks()
+
