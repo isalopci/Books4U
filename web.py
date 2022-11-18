@@ -18,3 +18,16 @@ if selection == 'Title':
 limit = search3.number_input(label = 'Insert the max number of results', min_value=1, max_value=100, value=10, label_visibility="visible")
 #Column4
 size = search4.selectbox(label = 'Size of books cover', options=['S', 'M', 'L'])
+
+
+#Displaying books
+if title or author:
+    list_docs = fetch(title, author).fetchRawDocs()
+    len_list = len(list_docs)
+    for doc in list_docs[:limit]:
+        st.image(image = fetch.extractImage(doc, size))
+        st.write(f'Title: {fetch.extractTitle(doc)}')
+        st.write(f'Authors: {fetch.extractAuthors(doc)}')
+        st.write(f'Publication date: {fetch.extractPublicationYear(doc)}')
+        st.write(f'Average book length: {fetch.extractBookPages(doc)}')
+        
