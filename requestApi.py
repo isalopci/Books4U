@@ -9,14 +9,10 @@ class requestApi:
 
         base_url = 'http://openlibrary.org/search.json'
 
-        if self.author and self.title:
-            query = f'?title={self.title}?author={self.author}'
-        elif self.author:
+        if self.author:
             query = f'?author={self.author}'
         elif self.title:
             query = f'?title={self.title}'
-        else:
-            query = f'?title=the+lord+of+the+rings?author=tolkien'
         
         return base_url + query
 
