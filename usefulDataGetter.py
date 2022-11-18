@@ -17,6 +17,11 @@ class usefulDataGetter:
     def extractPublicationYear(raw_doc:dict) -> str:
         return raw_doc.get('first_publish_year')
 
+    @staticmethod
+    def extractBookPages(raw_doc:dict) -> str:
+        return raw_doc.get('number_of_pages_median')
+
+
     def fetchRawDocs(self) -> list[dict]:
         raw_dictionary = self.books_response
         return raw_dictionary.get('docs')
