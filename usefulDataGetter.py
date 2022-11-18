@@ -1,5 +1,5 @@
 from requestApi import requestApi
-
+# This class obtains the useful information of a doc dictionary that throws the API response. Here it ensures to show only the important information
 class usefulDataGetter:
     def __init__(self, title:str = None, author:str = None) -> None:
         self.books_response = requestApi(title,author).fetchBooks()
