@@ -30,5 +30,5 @@ class requestApi:
     def fetchBooks(self):
         url = self.buildUrl()
         response = requests.get(url)
-        return response.text
+        return response.json()
 
