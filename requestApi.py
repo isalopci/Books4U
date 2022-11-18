@@ -20,8 +20,9 @@ class requestApi:
         
         return base_url + query
     
+     # Fetch cover image with default size L when not given
     @staticmethod
-    def fetchCoverImage(id:str, size:str = 'M') -> str:
+    def fetchCoverImage(id:str, size:str = 'L') -> str:
         if size not in ['S','M','L']:
             raise Exception('An image size must be entered (S, M or L)')
         return f'https://covers.openlibrary.org/b/id/{id}-{size}.jpg'
