@@ -1,8 +1,8 @@
 import streamlit as st
 from usefulDataGetter import usefulDataGetter as fetch
 
-st.title('BOOKS :)')
-st.caption("A work done by Isabella López")
+st.title('BOOKS 4 U :)')
+st.caption("By Isabella López Cifuentes")
 
 search1, search2, search3, search4 = st.columns(4)
 #Column1
@@ -15,7 +15,7 @@ if selection == 'Author':
 if selection == 'Title':
     title = search2.text_input(label = "Insert the title of a book")
 #Column3
-limit = search3.number_input(label = 'Insert the max number of results', min_value=1, max_value=100, value=10, label_visibility="visible")
+limit = search3.number_input(label = 'Insert number of results', min_value=1, max_value=100, value=10, label_visibility="visible")
 #Column4
 size = search4.selectbox(label = 'Size of books cover', options=['S', 'M', 'L'])
 
@@ -26,8 +26,9 @@ if title or author:
     len_list = len(list_docs)
     for doc in list_docs[:limit]:
         st.image(image = fetch.extractImage(doc, size))
-        st.write(f'Title: {fetch.extractTitle(doc)}')
-        st.write(f'Authors: {fetch.extractAuthors(doc)}')
-        st.write(f'Publication date: {fetch.extractPublicationYear(doc)}')
-        st.write(f'Average book length: {fetch.extractBookPages(doc)}')
-        
+        with st.container():
+            st.write(f'Title: {fetch.extractTitle(doc)}')
+            st.write(f'Authors: {fetch.extractAuthors(doc)}')
+            st.write(f'Publication date: {fetch.extractPublicationYear(doc)}')
+            st.write(f'Average book length: {fetch.extractBookPages(doc)}')
+            
