@@ -1,9 +1,13 @@
+import re
 import requests
 
 class requestApi:
     def __init__(self, title:str = None, author:str = None) -> None:
-        self.title = title 
-        self.author = author 
+        self.title = self.formatString(title) if title else title 
+        self.author = self.formatString(author) if author else author
+
+    def formatString(self, name:str) -> str:
+        return re.sub(r'\s+','%20',name)
         
     def buildUrl(self) -> str:
 
