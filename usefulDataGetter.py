@@ -21,6 +21,10 @@ class usefulDataGetter:
     def extractBookPages(raw_doc:dict) -> str:
         return raw_doc.get('number_of_pages_median')
 
+    @staticmethod
+    def extractImage(raw_doc:dict, size:str = 'L') -> str:
+        cover_image_id = raw_doc.get('cover_i')
+        return requestApi.fetchCoverImage(cover_image_id, size)
 
     def fetchRawDocs(self) -> list[dict]:
         raw_dictionary = self.books_response
