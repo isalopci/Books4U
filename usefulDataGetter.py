@@ -13,6 +13,10 @@ class usefulDataGetter:
         authors = raw_doc.get('author_name')
         return ', '.join(authors)
 
+    @staticmethod
+    def extractPublicationYear(raw_doc:dict) -> str:
+        return raw_doc.get('first_publish_year')
+
     def fetchRawDocs(self) -> list[dict]:
         raw_dictionary = self.books_response
         return raw_dictionary.get('docs')
