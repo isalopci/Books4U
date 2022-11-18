@@ -12,11 +12,11 @@ Usage:
 
 This application was programmed using Python 3.9.2, therefore in order to run the application, it is necessary to have at least this version of python. 
 
-Fulfilling python requirement, you only need to install some dependencies. Open your terminal, cd into the directory test1. There install the dependencies by running (using PyPI):
+Fulfilling the python requirement, you only need to install some dependencies. Open your terminal, cd into the directory test1. Once there, install the dependencies by running (using PyPI):
 
 pip install -r requirements.txt
 
-Once Streamlit and requests libraries are installed, now you can start the application by running:
+Once the streamlit and requests libraries are installed, you can start the application by running:
 
 python -m streamlit run web.py
 
