@@ -21,6 +21,7 @@ class usefulDataGetter:
     def extractBookPages(raw_doc:dict) -> str:
         return raw_doc.get('number_of_pages_median')
 
+    # Extract image with default size L when not given
     @staticmethod
     def extractImage(raw_doc:dict, size:str = 'L') -> str:
         cover_image_id = raw_doc.get('cover_i')
