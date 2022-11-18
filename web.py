@@ -1,6 +1,8 @@
 import streamlit as st
 from usefulDataGetter import usefulDataGetter as fetch
 
+# Script to create the interface with streamlit and show the books search results in it
+
 def createInterface() -> None:
 
     st.title('BOOKS 4 U :)')
